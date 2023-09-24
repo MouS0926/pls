@@ -1,6 +1,6 @@
 const express=require("express")
 const {connection}=require("./db")
-// const {UserRouter} =require("./routes/userrouter")
+const {userRouter}=require("./routes/userrouter")
 
 const cors=require("cors")
 
@@ -11,7 +11,7 @@ const app=express()
 
 app.use(express.json())
 app.use(cors())
-// app.use("/user",userRouter)
+app.use("/user",userRouter)
 
 app.get("/",(req,res)=>{
     res.status(200).send("get req")
